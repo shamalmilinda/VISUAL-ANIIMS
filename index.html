@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>VISUAL ANIIMS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+RESET
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:#050816;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* =========================
+ANIMATED BACKGROUND
+========================= */
+
+.bg-animation{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  z-index:-2;
+  overflow:hidden;
+  background:
+  radial-gradient(circle at top left,#12203f 0%,transparent 40%),
+  radial-gradient(circle at bottom right,#0d4b5a 0%,transparent 35%),
+  #050816;
+}
+
+.bg-animation span{
+  position:absolute;
+  display:block;
+  width:25px;
+  height:25px;
+  background:rgba(0,255,255,0.08);
+  animation:animate 18s linear infinite;
+  bottom:-150px;
+  border-radius:50%;
+  box-shadow:0 0 25px rgba(0,255,255,0.3);
+}
+
+.bg-animation span:nth-child(1){
+  left:10%;
+  width:60px;
+  height:60px;
+  animation-duration:25s;
+}
+
+.bg-animation span:nth-child(2){
+  left:25%;
+  animation-duration:17s;
+}
+
+.bg-animation span:nth-child(3){
+  left:40%;
+  width:45px;
+  height:45px;
+  animation-duration:20s;
+}
+
+.bg-animation span:nth-child(4){
+  left:55%;
+  animation-duration:22s;
+}
+
+.bg-animation span:nth-child(5){
+  left:70%;
+  width:70px;
+  height:70px;
+  animation-duration:28s;
+}
+
+.bg-animation span:nth-child(6){
+  left:85%;
+  animation-duration:18s;
+}
+
+@keyframes animate{
+
+  0%{
+    transform:translateY(0) rotate(0deg);
+    opacity:0;
+  }
+
+  10%{
+    opacity:1;
+  }
+
+  100%{
+    transform:translateY(-1200px) rotate(720deg);
+    opacity:0;
+  }
+
+}
+
+/* =========================
+NAVBAR
+========================= */
+
+nav{
+  width:100%;
+  padding:20px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:fixed;
+  top:0;
+  z-index:1000;
+  backdrop-filter:blur(15px);
+  background:rgba(10,15,30,0.55);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.logo{
+  font-size:28px;
+  font-weight:800;
+  letter-spacing:2px;
+  color:#00e5ff;
+}
+
+/* NAV LINKS */
+.nav-links{
+  display:flex;
+  gap:35px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:white;
+  font-weight:500;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:#00e5ff;
+}
+
+/* =========================
+HAMBURGER MENU
+========================= */
+
+.hamburger{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+}
+
+.hamburger span{
+  width:28px;
+  height:3px;
+  background:#00e5ff;
+  border-radius:5px;
+  transition:0.3s;
+}
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:140px 7% 80px;
+}
+
+.hero-content{
+  max-width:1000px;
+}
+
+.hero h1{
+  font-size:59px;
+  font-weight:800;
+  line-height:1;
+  margin-bottom:25px;
+  background:linear-gradient(to right,#8263ff,#00ffb7);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+  font-size:20px;
+  line-height:1.5;
+  color:#d8d8d8;
+  margin-bottom:45px;
+}
+
+.hero-buttons{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.hero-buttons a{
+  text-decoration:none;
+  padding:16px 34px;
+  border-radius:14px;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.btn-primary{
+  background:linear-gradient(135deg,#00e5ff,#00ffb7);
+  color:#000;
+}
+
+.btn-primary:hover{
+  transform:translateY(-4px);
+  box-shadow:0 0 30px rgba(0,255,255,0.4);
+}
+
+.btn-secondary{
+  border:1px solid rgba(255,255,255,0.2);
+  color:white;
+  background:rgba(255,255,255,0.05);
+}
+
+.btn-secondary:hover{
+  background:rgba(255,255,255,0.1);
+}
+
+/* =========================
+SECTION
+========================= */
+
+section{
+  padding:90px 7%;
+}
+
+.section-title{
+  font-size:45px;
+  text-align:center;
+  margin-bottom:15px;
+  font-weight:800;
+}
+
+.section-desc{
+  text-align:center;
+  color:#b9b9b9;
+  margin-bottom:60px;
+  font-size:18px;
+}
+
+/* =========================
+USE SOFTWARE
+========================= */
+
+.software-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:35px;
+  margin-top:50px;
+}
+
+.software-card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  transition:0.4s;
+}
+
+.software-card:hover{
+  transform:translateY(-10px);
+}
+
+.software-circle{
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  backdrop-filter:blur(12px);
+  box-shadow:
+  0 0 25px rgba(0,255,255,0.12),
+  inset 0 0 20px rgba(255,255,255,0.03);
+  transition:0.4s;
+  overflow:hidden;
+}
+
+.software-circle:hover{
+  transform:scale(1.08);
+  box-shadow:
+  0 0 40px rgba(0,255,255,0.35),
+  0 0 70px rgba(130,99,255,0.2);
+}
+
+.software-circle img{
+  width:190px;
+  height:190px;
+  object-fit:contain;
+  filter:drop-shadow(0 0 15px rgba(255,255,255,0.2));
+}
+
+.software-card h3{
+  margin-top:18px;
+  font-size:20px;
+  font-weight:700;
+  color:white;
+}
+
+/* =========================
+PROJECTS
+========================= */
+
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+
+.project-card{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:25px;
+  overflow:hidden;
+  transition:0.4s;
+  backdrop-filter:blur(10px);
+}
+
+.project-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 35px rgba(0,255,255,0.15);
+}
+
+.project-card img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+}
+
+.project-content{
+  padding:25px;
+}
+
+.project-content h3{
+  margin-bottom:12px;
+  font-size:24px;
+}
+
+.project-content p{
+  color:#c8c8c8;
+  line-height:1.7;
+}
+
+/* =========================
+WALLPAPER PROFILE
+========================= */
+
+.wallpaper-profile{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-top:10px;
+  margin-bottom:22px;
+}
+
+.wallpaper-profile img{
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid rgba(0,229,255,0.5);
+}
+
+.wallpaper-profile h4{
+  font-size:17px;
+  margin-bottom:4px;
+}
+
+.wallpaper-profile span{
+  color:#bdbdbd;
+  font-size:14px;
+}
+
+/* =========================
+DOWNLOAD BUTTON
+========================= */
+
+.download-btn{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-decoration:none;
+  padding:14px 20px;
+  border-radius:14px;
+  font-weight:700;
+  background:linear-gradient(135deg,#00e5ff,#00ffb7);
+  color:#000;
+  transition:0.3s;
+}
+
+.download-btn:hover{
+  transform:translateY(-4px);
+  box-shadow:0 0 25px rgba(0,255,255,0.4);
+}
+
+/* =========================
+FOUNDERS
+========================= */
+
+.founders{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+
+.founder-card{
+  background:rgba(255,255,255,0.05);
+  border-radius:25px;
+  padding:40px 30px;
+  text-align:center;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:0.3s;
+}
+
+.founder-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 0 25px rgba(0,255,255,0.15);
+}
+
+.founder-card img{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:20px;
+  border:4px solid rgba(0,229,255,0.4);
+}
+
+.founder-card h3{
+  font-size:26px;
+  margin-bottom:10px;
+}
+
+.founder-card span{
+  color:#00e5ff;
+  font-weight:600;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+  margin-top:80px;
+  padding:70px 7% 35px;
+  background:rgba(0,0,0,0.35);
+  border-top:1px solid rgba(255,255,255,0.08);
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:40px;
+  margin-bottom:50px;
+}
+
+.footer-box h2{
+  margin-bottom:18px;
+  color:#00e5ff;
+}
+
+.footer-box p{
+  color:#cfcfcf;
+  line-height:1.8;
+}
+
+.footer-links{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.footer-links a{
+  text-decoration:none;
+  color:#d8d8d8;
+  transition:0.3s;
+}
+
+.footer-links a:hover{
+  color:#00e5ff;
+}
+
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.08);
+  padding-top:25px;
+  text-align:center;
+  color:#a9a9a9;
+}
+
+/* =========================
+RESPONSIVE NAV
+========================= */
+
+@media(max-width:700px){
+
+  .hamburger{
+    display:flex;
+  }
+
+  .nav-links{
+    position:absolute;
+    top:70px;
+    right:7%;
+    flex-direction:column;
+    background:rgba(10,15,30,0.95);
+    padding:20px;
+    border-radius:15px;
+    display:none;
+  }
+
+  .nav-links.active{
+    display:flex;
+  }
+
+  nav{
+    flex-direction:row;
+  }
+
+}
+
+/* hamburger animation */
+.hamburger.active span:nth-child(1){
+  transform:rotate(45deg) translateY(8px);
+}
+.hamburger.active span:nth-child(2){
+  opacity:0;
+}
+.hamburger.active span:nth-child(3){
+  transform:rotate(-45deg) translateY(-8px);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+<div class="bg-animation">
+  <span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<!-- NAV -->
+<nav>
+
+  <div class="logo">VISUAL ANIIMS</div>
+  
+
+
+  <div class="nav-links" id="navLinks">
+    <a href="#software">Software</a>
+    <a href="#projects">Projects</a>
+    <a href="#wallpapers">Wallpapers</a>
+    <a href="#founders">Founders</a>
+    <a href="#footer">Contact</a>
+  </div>
+
+  <!-- HAMBURGER -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+  <div class="hero-content">
+
+    <h1>
+      NEXT LEVEL <br>3D MODELING & ANIMATION
+    </h1>
+
+    <p>
+      Welcome to <b>VISUAL ANIIMS</b>.
+      We create high quality 3D models and animations with a focus on creative and professional visual design. While not specializing in sculpting. We also work on external projects, helping bring different ideas and concepts to life through detailed 3D visuals. In addition, we design unique 3D wallpapers that anyone can download and use freely on their devices.
+
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#projects" class="btn-primary">Explore Projects</a>
+      <a href="#footer" class="btn-secondary">Contact us</a>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+USE SOFTWARE
+========================= -->
+
+<section id="software">
+
+  <h2 class="section-title">USE SOFTWARE</h2>
+
+  <p class="section-desc">
+    Professional software tools we use for 3D modeling, animation and creative design.
+  </p>
+
+  <div class="software-grid">
+
+    <!-- SOFTWARE 01 -->
+     <div class="software-card">
+
+      <div class="software-circle">
+        <img src="unreal engine.jpg" alt="Unreal Engine">
+      </div>
+
+      <h3>Unreal Engine</h3>
+
+    </div>
+    
+    <!-- SOFTWARE 02 -->
+    <div class="software-card">
+
+      <div class="software-circle">
+        <img src="blender.jpg" alt="Blender">
+      </div>
+
+      <h3>Blender</h3>
+
+    </div>
+
+    <!-- SOFTWARE 03 -->
+    <div class="software-card">
+
+      <div class="software-circle">
+        <img src="after effect.jpg" alt="After Effects">
+      </div>
+
+      <h3>After Effects</h3>
+
+    </div>
+
+    <!-- SOFTWARE 04 -->
+    <div class="software-card">
+
+      <div class="software-circle">
+        <img src="photoshop.jpg" alt="Photoshop">
+      </div>
+
+      <h3>Photoshop</h3>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+  <h2 class="section-title">3D PROJECTS</h2>
+
+  <p class="section-desc">
+    Professional 3D Modeling & Animation Creations
+  </p>
+
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <img src="V1.jpg" alt="">
+
+      <div class="project-content">
+        <h3>3D Modeling</h3>
+
+        <p>
+          Realistic environments, landscapes, trees and cinematic world building.
+        </p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="V2.jpg" alt="">
+
+      <div class="project-content">
+        <h3>3D Modeling</h3>
+
+        <p>
+          High quality human models and stylized 3D character designs.
+        </p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="V3.jpg" alt="">
+
+      <div class="project-content">
+        <h3>3D Modeling</h3>
+
+        <p>
+          Realistic environments, landscapes, trees and cinematic world building.
+        </p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="V4.jpg" alt="">
+
+      <div class="project-content">
+        <h3>3D Modeling</h3>
+
+        <p>
+          Smooth cinematic animations with futuristic creative storytelling.
+        </p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="V6.jpg" alt="">
+
+      <div class="project-content">
+        <h3>3D Modeling</h3>
+
+        <p>
+          Realistic environments, landscapes, trees and cinematic world building.
+        </p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="V8.jpg" alt="">
+
+      <div class="project-content">
+        <h3>3D Modeling</h3>
+
+        <p>
+          Smooth cinematic animations with futuristic creative storytelling.
+        </p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="V9.jpg" alt="">
+
+      <div class="project-content">
+        <h3>3D Modeling & Animation</h3>
+
+        <p>
+          Smooth cinematic animations with futuristic creative storytelling.
+        </p>
+      </div>
+    </div>
+    
+    <div class="project-card">
+      <img src="V5.jpg" alt="">
+
+      <div class="project-content">
+        <h3>3D Modeling</h3>
+
+        <p>
+          Smooth cinematic animations with futuristic creative storytelling.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- WALLPAPERS -->
+
+<section id="wallpapers">
+
+  <h2 class="section-title">3D WALLPAPERS</h2>
+
+  <p class="section-desc">
+    Creative wallpaper designs made for mobile, desktop and digital screens.
+  </p>
+
+  <div class="projects-grid">
+
+    <!-- WALLPAPER 01 -->
+    <div class="project-card">
+
+      <img src="C1.jpg" alt="">
+
+      <div class="project-content">
+
+        <div class="wallpaper-profile">
+
+          <img src="1.jpg" alt="profile">
+
+          <div>
+            <h4>CRAZY BLACK ELITE</h4>
+            <span>Super Amoled cinematic neon wallpapers</span>
+          </div>
+
+        </div>
+
+        <a href="https://zedge.sng.link/At560/ay3k/r_85ee0fb7ac?_dl=https%3A%2F%2Fzedge.me%2Fcrazy-black-elite-1236834127&_fallback_redirect=https%3A%2F%2Fzedge.me%2Fcrazy-black-elite-1236834127" class="download-btn">
+          Download Wallpaper
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- WALLPAPER 02 -->
+    <div class="project-card">
+
+      <img src="D1.jpg" alt="">
+
+      <div class="project-content">
+
+        <div class="wallpaper-profile">
+
+          <img src="2.jpg" alt="profile">
+
+          <div>
+            <h4>DARK THUNDER</h4>
+            <span>Super Amoled cinematic neon wallpapers</span>
+          </div>
+
+        </div>
+
+        <a href="https://zedge.me/dark-thunder-341183255" class="download-btn">
+          Download Wallpaper
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- WALLPAPER 03 -->
+    <div class="project-card">
+
+      <img src="F1.jpg" alt="">
+
+      <div class="project-content">
+
+        <div class="wallpaper-profile">
+
+          <img src="3.jpg" alt="profile">
+
+          <div>
+            <h4>FRAME FOLIO</h4>
+            <span>Super Amoled cinematic neon wallpapers</span>
+          </div>
+
+        </div>
+
+        <a href="https://zedge.me/frame-folio" class="download-btn">
+          Download Wallpaper
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOUNDERS -->
+
+<section id="founders">
+
+  <h2 class="section-title">FOUNDERS</h2>
+
+  <p class="section-desc">
+    The creative minds behind <b>VISUAL ANIIMS</b>
+  </p>
+
+  <div class="founders">
+
+    <div class="founder-card">
+      <img src="shamal.jpg" alt="">
+
+      <h3>Shamal Punchihewa</h3>
+
+      <span>Founder</span>
+    </div>
+
+    <div class="founder-card">
+      <img src="" alt="">
+
+      <h3>Roshan Punchihewa</h3>
+
+      <span>Co-Founder</span>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer id="footer">
+
+  <div class="footer-grid">
+
+    <div class="footer-box">
+
+      <h2>VISUAL ANIIMS</h2>
+
+      <p>
+        Professional 3D Modeling, 3D Animation and Creative Wallpaper Design Studio.
+        Creating futuristic digital visuals with imagination and innovation.
+      </p>
+
+    </div>
+
+    <div class="footer-box">
+
+      <h2>Follow Us</h2>
+
+      <div class="footer-links">
+        <a href="https://www.artstation.com/shamalmilinda7">Artstation</a>
+        <a href="https://www.shutterstock.com/g/VISUAL++ANIIMS">Shutter Stock</a>
+        <a href="https://stock.adobe.com/lk/contributor/211666020/AI%20ANIIMS">Adobe Stock</a>
+        <a href="https://www.youtube.com/channel/UCBcRB10kwgeylmWTBaP56dg">Youtube</a>
+        <a href="https://www.facebook.com/profile.php?id=100092211406612&mibextid=ZbWKwL">Facebook</a>
+      </div>
+
+    </div>
+
+    <div class="footer-box">
+
+      <h2>Products Download</h2>
+
+      <div class="footer-links">
+        <a href="https://shamalmilinda.github.io/8DANIIMS.github.io/link_1/Dark%20Thunder.html">Phone Wallpapers</a>
+        <a href="https://shamalmilinda.github.io/AI-ANIIMS-IMAGE-BUNDLE/">AI Image Bundles</a>
+        <a href="https://shamalmilinda.github.io/AI-ANIIMS-IMAGE-PROMPT/">AI Prompts</a>
+        <a href="https://shamalmilinda.github.io/8DANIIMS.github.io/author.html">8D Audios</a>
+      </div>
+
+    </div>
+
+    <div class="footer-box">
+
+      <h2>Contact us</h2>
+
+      <div class="footer-links">
+        <a href="#">visualaniims23@gmail.com</a>
+        <a href="#">+94 75 214 3840</a>
+        <a href="#">+94 71 307 5604</a>
+        <a href="#">+94 75 074 3321</a>
+        <a href="#">+94 70 453 2818</a>
+        <a href="#">Kurunegala, Sri Lanka.</a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 VISUAL ANIIMS - All Rights Reserved.
+  </div>
+
+</footer>
+
+<!-- JS -->
+<script>
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+  hamburger.classList.toggle("active");
+});
+</script>
+
+</body>
+</html>
